@@ -7,7 +7,7 @@ import (
 
 	"fmt"
 
-	"../route"
+	"../../route"
 )
 
 type Page struct {
@@ -43,6 +43,7 @@ func EditHandler(router *route.Router, title string) {
 }
 
 func ViewHandler(router *route.Router, title string) {
+	fmt.Println("titleeeeeeeeeeeeeeeeeeeeeeeeeeeeee", title)
 	p, err := loadPage(title)
 	if err != nil {
 		http.Redirect(router.Response, router.Request, "/edit/"+title, http.StatusFound)
